@@ -12,22 +12,34 @@ public class MainTest {
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
     void testSample1() {
-        final Main main = new Main();
-        final boolean actual = main.isPossible(4, 2, 6);
+        final boolean actual = Main.isPossible(4, 2, 6);
         assertThat(actual).isEqualTo(true);
     }
 
-    void testSample2() {
-        final Main main = new Main();
-        final boolean actual = main.isPossible(2, 10, 7);
+    @Test
+    void testSample2_false() {
+        final boolean actual = Main.isPossible(2, 10, 7);
         assertThat(actual).isEqualTo(false);
     }
 
+    @Test
     void testSample3() {
-        final Main main = new Main();
-        final boolean actual = main.isPossible(7, 4, 21);
+        final boolean actual = Main.isPossible(7, 4, 21);
         assertThat(actual).isEqualTo(true);
+    }
+
+    @Test
+    void testSample4() {
+        final boolean actual = Main.isPossible(5, 4, 5);
+        assertThat(actual).isEqualTo(true);
+    }
+
+    @Test
+    void testSample6_false() {
+        final boolean actual = Main.isPossible(2, 4, 3);
+        assertThat(actual).isEqualTo(false);
     }
 
 }
